@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: algerian, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.homeBody{
+
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+

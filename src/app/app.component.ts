@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {count} from "rxjs";
+import {NoteService} from "./service/note.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'noteFrontend';
+  counter = 0
+
+  constructor(private noteSerivce: NoteService) {
+  }
+
+
+  counte() {
+    this.counter++
+  }
+
+
+  removeEverything() {
+    this.counter = 0
+    this.noteSerivce.getAllStuff()
+  }
 }

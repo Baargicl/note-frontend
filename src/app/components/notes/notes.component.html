@@ -1,0 +1,19 @@
+<h3>Create new note</h3>
+<button class="createNoteButton">+</button>
+
+<h1 class="notes">All notes
+</h1>
+
+
+
+
+
+<div *ngFor="let note of allNotes">
+  <h2 class="notes"
+      (click)="openNote(note.id)">{{note.title}}</h2>
+  <br>
+</div>
+
+
+
+
