@@ -8,7 +8,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NotesComponent } from './components/notes/notes.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoteViewComponent } from './components/note-view/note-view.component';
-import {PostFinanceComponentLibraryModule} from '@postfinance/component-library-angular';
 
 
 
@@ -20,7 +19,6 @@ import {PostFinanceComponentLibraryModule} from '@postfinance/component-library-
     NoteViewComponent
   ],
   imports: [
-    PostFinanceComponentLibraryModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
