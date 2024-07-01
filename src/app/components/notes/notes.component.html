@@ -1,8 +1,10 @@
 <h3>Create new note</h3>
-<button id="openDialogButton" class="createNoteButton">+</button>
+<button id="openDialogButton" class="createNoteButton">++</button>
 
-<h1 class="notes">All notes
-</h1>
+<div class="btn-container">
+<h1 class="notes">All notes</h1>
+<button (click)="deleteAllNotes()" id="deleteAllNotes" class="deleteAllNotesButton">Delete all Notes</button>
+</div>
 
 
 
@@ -14,8 +16,11 @@
 
 
 <dialog style="width: 500px; height: 500px" id="dialog">
-  Content here
-  <button id="close">close</button>
+  <input type="text" placeholder="write title">
+  <br>
+  <input type="text" placeholder="write note">
+  <button id="close" class="close">close</button>
+  <button (click)="postNote()" id="create" class="create">create note</button>
 </dialog>
 
 

@@ -2,7 +2,7 @@ h1.notes {
   margin-bottom: 50px;
 }
 h1.notes {
-  margin-top: 32px;
+  margin-bottom: 0px;
   font-family: algerian, sans-serif;
   color: gray;
 }
@@ -14,5 +14,31 @@ h1.notes {
   border-radius: 100px;
   border-color: black;
   border-width: 10px;
+}
+.createNoteButton:hover{
+  cursor: pointer;
+
+}
+
+
+
+.btn-container{
+  margin-top: 32px;
+  display: flex;justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.deleteAllNotesButton:hover {
+  cursor: pointer;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.create:hover {
+  cursor: pointer;
 }
 

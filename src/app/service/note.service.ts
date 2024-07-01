@@ -23,4 +23,13 @@ export class NoteService {
     return this.httpClient.post(this.BASE_URL + "/note", {title, text})
   }
 
+
+  deleteAll() {
+   return this.httpClient.delete(this.BASE_URL + "/note", {responseType: "text"})
+
+  }
+
+
+
+
 }

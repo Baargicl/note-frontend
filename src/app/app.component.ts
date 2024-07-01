@@ -15,11 +15,6 @@ export class AppComponent {
   }
 
 
-  counte() {
-    this.counter++
-  }
-
-
   removeEverything() {
     this.counter = 0
     this.noteSerivce.getAllStuff()
