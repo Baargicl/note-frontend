@@ -8,20 +8,40 @@ import {Router} from "@angular/router";
   templateUrl: './note-view.component.html',
   styleUrl: './note-view.component.scss'
 })
-export class NoteViewComponent implements OnInit{
-note ?: Note
-
+export class NoteViewComponent implements OnInit {
+  note ?: Note
+  isEditMode: boolean = false
 
   constructor(private noteService: NoteService,
-              private router: Router){}
+              private router: Router) {
+  }
+
   ngOnInit(): void {
     const id: number = this.readIdOfUrl();
     this.noteService.getById(id).subscribe(note => this.note = note)
-    }
+  }
 
   private readIdOfUrl(): number {
     const url: string = this.router.url;
     let urlParts: string[] = url.split('/');
     return +urlParts[urlParts.length - 1];
   }
+
+
+  deleteNote() {
+    this.noteService.deleteSingleNote(this.note?.id ?? 0).subscribe({
+      complete: () => this.router.navigate(['/notes']).then(r => console.log("Note coud not be deleted!"))
+
+    });
+  }
+
+  editNote() {
+    this.isEditMode = true
+    this.noteService.editSingleNote(this.note?.id ?? 0, this.note!.title, this.note!.text).subscribe({
+      complete: () => HTMLInputElement
+    })
+
+  }
+
 }
+

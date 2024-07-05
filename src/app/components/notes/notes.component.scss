@@ -2,21 +2,23 @@ h1.notes {
   margin-bottom: 50px;
 }
 h1.notes {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-family: algerian, sans-serif;
-  color: gray;
+  color: black;
 }
 
-.createNoteButton {
+.createButton {
   height: 50px;
   width: 100px;
-  background-color: white;
-  border-radius: 100px;
-  border-color: black;
-  border-width: 10px;
+  background-color:silver;
+  color: black;
+  border: none;
+  font-size: 64px;
 }
-.createNoteButton:hover{
-  cursor: pointer;
+
+
+.createNewNote {
+  color: black;
 
 }
 
@@ -28,17 +30,55 @@ h1.notes {
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
+  position: relative;
 }
 
-.deleteAllNotesButton:hover {
+#create {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#deleteAllNotes {
+  background-color: black;
+  color: white;
+}
+
+#openDialogButton {
+
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  align-items: center;
+
+}
+
+.buttonHover:hover {
   cursor: pointer;
 }
 
-.close:hover {
-  cursor: pointer;
+
+
+.allNotes {
+  color: black;
+  margin-bottom: 32px;
 }
 
-.create:hover {
-  cursor: pointer;
+.homeBody{
+
+  background-color: silver;
+  height: 100vh;
+  padding: 32px;
 }
 
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

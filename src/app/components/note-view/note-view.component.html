@@ -1,9 +1,18 @@
-
+@if (!isEditMode) {
 <div *ngIf="note">
-  <h2>{{note.title}}</h2>
-  {{note.text}}
+  <h2>{{ note.title }}</h2>
+  {{ note.text }}
 
 </div>
+} @else {
+  <input *ngIf="note" id="titleInput" type="text" [value]="note.title">
+  <input *ngIf="note" id="textInput" type="text" [value]="note.text">
+}
+
+<button (click)="deleteNote()" id="deleteNote" class="deleteNote"></button>
 
 
+<mat-icon class="buttonHover" aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="deleteNote()"></mat-icon>
 
+
+<mat-icon id="editNote" class="buttonHover" aria-hidden="false" aria-label="Example home icon" fontIcon="edit_note" (click)="editNote()"></mat-icon>

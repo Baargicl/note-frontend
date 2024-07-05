@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Note} from "../model/note.interface";
+import {response} from "express";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import {Note} from "../model/note.interface";
 export class NoteService {
 
   BASE_URL = "http://localhost:8080/api"
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient) {
+  }
 
 
   getAllStuff() {
@@ -19,17 +22,26 @@ export class NoteService {
     return this.httpClient.get<Note>(this.BASE_URL + `/note/${id}`)
   }
 
-  createNote(title: string, text: string){
-    return this.httpClient.post(this.BASE_URL + "/note", {title, text})
+  createNote(title: string, text: string) {
+    return this.httpClient.post<Note>(this.BASE_URL + "/note", {title, text})
+
   }
 
 
   deleteAll() {
-   return this.httpClient.delete(this.BASE_URL + "/note", {responseType: "text"})
+    return this.httpClient.delete(this.BASE_URL + "/note", {responseType: "text"})
 
   }
 
+  deleteSingleNote(id: number) {
+    return this.httpClient.delete(this.BASE_URL + `/note/${id}`, {responseType: "text"})
+  }
 
-
-
+  editSingleNote(id: number, newTitle: string, newText: string) {
+    return this.httpClient.put(this.BASE_URL + `/note/${id}`, {
+      id: id,
+      title: newTitle,
+      text: newText
+    })
+  }
 }

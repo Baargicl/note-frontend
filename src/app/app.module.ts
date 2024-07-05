@@ -8,6 +8,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NotesComponent } from './components/notes/notes.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoteViewComponent } from './components/note-view/note-view.component';
+import {NgOptimizedImage} from "@angular/common";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIcon} from "@angular/material/icon";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {MatFabButton} from "@angular/material/button";
 
 
 
@@ -21,10 +27,17 @@ import { NoteViewComponent } from './components/note-view/note-view.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage,
+    MatIcon,
+    MatFormField,
+    MatInput,
+    MatFabButton,
+    MatLabel
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync('noop')
   ],
   bootstrap: [AppComponent]
 })

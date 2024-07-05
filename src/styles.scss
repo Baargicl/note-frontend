@@ -1,18 +1,7 @@
 * {
-  font-family: algerian, sans-serif;
+  font-family: "PostFinance Grotesk Light", sans-serif;
   margin: 0;
   padding: 0;
-}
-
-
-.homeBody{
-
-  background-color: beige;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 
@@ -23,3 +12,6 @@
   justify-content: space-around;
   align-items: center;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
